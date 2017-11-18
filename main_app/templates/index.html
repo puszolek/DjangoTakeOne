@@ -8,20 +8,55 @@
         <title>My blog</title>
     </head>
     <body>
-        <h1>Hello, this is my blogasek</h1>
-        {% for person in people %}
-            <p>{{person.name}}</p>
-            <p>{{person.age}}</p>
-            <p>{{person.location}}</p>
-            {% if person.food == 'pizza' %}
-                <p>{{person.food}}</p>
-            {% else %}
-                <p>Don't lie that you love {{person.food}}, I know you like pizza!</p>
-            {% endif %}
-        {% endfor %}
         <nav class="navbar navbar-default navbar-static-top text-center">
             <a href="/">
                 <img src="{% static 'images/pusheen.jpg' %}" alt="pusheen"/>
             </a>
+        </nav>
+        <main class="container" role="main">
+            <div class="people panel panel-default">
+                {% for person in people %}
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{person.name}}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="treasure-photo">
+
+                        </div>
+                        <table class="table table-active">
+                            <tr>
+                                    <img src="{{person.img_url}}" height="100" class="img-circle">
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="{% static 'images/icon.png' %}" width="15" alt="icon">
+                                    Age:
+                                </th>
+                                <td>{{person.age}}</td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="{% static 'images/location_icon.png' %}" width="15" alt="icon">
+                                    Location:
+                                </th>
+                                <td>{{person.location}}</td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="{% static 'images/food_icon.png' %}" width="15" alt="icon">
+                                    Food:
+                                </th>
+                                <td>{{person.food}}</td>
+                            </tr>
+                        </table>
+                        <!---{% if person.food == 'pizza' %}
+                            <p>{{person.food}}</p>
+                        {% else %}
+                            <p>Don't lie that you love {{person.food}}, I know you like pizza!</p>
+                        {% endif %}--->
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
     </body>
 </html>
