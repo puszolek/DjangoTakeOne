@@ -1,9 +1,23 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}"/>
         <title>My blog</title>
     </head>
     <body>
         <h1>Hello, this is my blogasek</h1>
+        {% for person in people %}
+            <p>{{person.name}}</p>
+            <p>{{person.age}}</p>
+            <p>{{person.location}}</p>
+            {% if person.food == 'pizza' %}
+                <p>{{person.food}}</p>
+            {% else %}
+                <p>Don't lie that you love {{person.food}}, I know you like pizza!</p>
+            {% endif %}
+        {% endfor %}
     </body>
 </html>
