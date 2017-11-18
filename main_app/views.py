@@ -7,4 +7,4 @@ def index(request):
     #return HttpResponse('<h1>Hello everyone!</h1>')
 
     # now rendering the template
-    return render(rewuest, 'index.html')
+    return render(request, 'index.html')
