@@ -3,4 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('<h1>Hello everyone!</h1>')
+    # returning http response
+    #return HttpResponse('<h1>Hello everyone!</h1>')
+
+    # now rendering the template
+    return render(rewuest, 'index.html')
